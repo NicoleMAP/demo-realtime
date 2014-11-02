@@ -1,0 +1,8 @@
+[group:tornadoes]
+programs=tornado1,tornado2
+
+[program:tornado1]
+command=/home/vagrant/env/bin/python /vagrant/api/py/run.py 8001
+
+[program:tornado2]
+command=/home/vagrant/env/bin/python /vagrant/api/py/run.py 8002

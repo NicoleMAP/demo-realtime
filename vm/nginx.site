@@ -1,0 +1,10 @@
+server {
+        listen 192.168.33.3;
+
+        location /static/ {
+            alias /vagrant/site/static/;
+            if ($query_string) {
+                expires max;
+            }
+        }
+}
