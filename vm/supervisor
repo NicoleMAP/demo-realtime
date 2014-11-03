@@ -1,8 +1,17 @@
 [group:tornadoes]
 programs=tornado1,tornado2
 
+[group:nodes]
+programs=node1,node2
+
 [program:tornado1]
 command=/home/vagrant/env/bin/python /vagrant/api/py/run.py 8001
 
 [program:tornado2]
 command=/home/vagrant/env/bin/python /vagrant/api/py/run.py 8002
+
+[program:node1]
+command=/usr/bin/node /vagrant/api/js/run.js 8001
+
+[program:node2]
+command=/usr/bin/node /vagrant/api/js/run.js 8002

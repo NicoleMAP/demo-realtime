@@ -6,6 +6,7 @@ upstream tornadoes {
 proxy_next_upstream error;
 
 server {
+        server_name py.realtime.com;
         listen 192.168.33.2;
 
         location ^~ /static/ {

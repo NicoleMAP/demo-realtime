@@ -1,8 +1,10 @@
 server {
-        listen 192.168.33.3;
+        server_name site.realtime.com;
+        listen 192.168.33.4;
 
-        location /static/ {
-            alias /vagrant/site/static/;
+        location ^~ / {
+            add_header Access-Control-Allow-Origin *;
+            alias /vagrant/static/;
             if ($query_string) {
                 expires max;
             }

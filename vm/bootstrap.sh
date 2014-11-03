@@ -22,10 +22,12 @@ apt-get install -y nginx
 
 # Configure NGINX web servers
 cp /vagrant/vm/nginx.py /etc/nginx/sites-available/py
-# cp /vagrant/vm/nginx.js /etc/nginx/sites-available/js
+cp /vagrant/vm/nginx.js /etc/nginx/sites-available/js
+cp /vagrant/vm/nginx.site /etc/nginx/sites-available/site
 
 ln -s /etc/nginx/sites-available/py /etc/nginx/sites-enabled/py
-# ln -s /etc/nginx/sites-available/js /etc/nginx/sites-enabled/js
+ln -s /etc/nginx/sites-available/js /etc/nginx/sites-enabled/js
+ln -s /etc/nginx/sites-available/site /etc/nginx/sites-enabled/site
 
 sed -i 's/sendfile on;/sendfile off;/' /etc/nginx/nginx.conf
 
@@ -33,7 +35,7 @@ sed -i 's/sendfile on;/sendfile off;/' /etc/nginx/nginx.conf
 echo "192.168.33.1   vagrant" >> /etc/hosts
 echo "192.168.33.2   py.realtime.com" >> /etc/hosts
 echo "192.168.33.3   js.realtime.com" >> /etc/hosts
-echo "192.168.33.4   realtime.com" >> /etc/hosts
+echo "192.168.33.4   site.realtime.com" >> /etc/hosts
 
 # Install & configure Supervisor
 apt-get install -y supervisor

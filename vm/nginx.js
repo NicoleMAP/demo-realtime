@@ -6,6 +6,7 @@ upstream nodes {
 proxy_next_upstream error;
 
 server {
+        server_name js.realtime.com;
         listen 192.168.33.3;
 
         location ^~ /static/ {
