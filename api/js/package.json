@@ -1,0 +1,20 @@
+{
+  "name": "demo-realtime",
+  "version": "1.0.0",
+  "description": "Mini curso de realtime da SCTI-UENF",
+  "main": "run.js",
+  "private": true,
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielfgularte/demo-realtime"
+  },
+  "author": "Gabriel Gularte <@gabrielfgularte>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielfgularte/demo-realtime/issues"
+  },
+  "homepage": "https://github.com/gabrielfgularte/demo-realtime"
+}
