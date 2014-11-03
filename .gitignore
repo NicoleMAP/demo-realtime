@@ -1,3 +1,4 @@
 .vagrant/
 *pyc
 *.sublime*
+node_modules/

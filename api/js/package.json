@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/gabrielfgularte/demo-realtime/issues"
   },
-  "homepage": "https://github.com/gabrielfgularte/demo-realtime"
+  "homepage": "https://github.com/gabrielfgularte/demo-realtime",
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "express": "^4.10.1",
+    "redis": "^0.12.1"
+  }
 }
