@@ -44,7 +44,6 @@ app.post('/chat', urlencParser, function(req, res, next) {
 
     var msg_id,
         users,
-        users_count,
         message_hash;
 
     redis_client.incr('message:incr', function(err, result) {
@@ -63,6 +62,7 @@ app.post('/chat', urlencParser, function(req, res, next) {
 
         for (var i = 0; i < result.length; i++) {
           redis_client.lpush(result[i] + ':channel', 'message:' + msg_id);
+          // TODO: add to user history (init)
         }
 
         res.status(201).send({
@@ -101,6 +101,37 @@ app.get('/chat', urlencParser, function(req, res, next) {
   }
 
 });
+
+// TODO: init
+// app.get('/init', urlencParser, function(req, res, next) {
+//
+//  var username = req.param('username');
+//
+//  if (username) {
+//
+//    var items = [];
+//
+//    redis_client.smembers(username + ':history', function(err, result) {
+//
+//      for (var i = 0; i < result.length; i++) {
+//
+//        redis_client.hgetall(result[i], function(err, result) {
+//
+//          items.push(result);
+//
+//        });
+//
+//      }
+//
+//      res.send(items);
+//
+//    })
+//
+//  } else {
+//    res.status(400).send('Bad Request');
+//  }
+//
+// });
 
 
 // Start server
